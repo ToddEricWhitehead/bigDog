@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.seleniumexpress.sm.DAO.StudentDAO;
 import com.seleniumexpress.sm.api.Student;
-import com.seleniumexpress.sm.api.StudentDTO;
-
 @Controller
 public class StudentController {
 
@@ -35,9 +33,9 @@ public class StudentController {
 	@GetMapping("/showAddStudentPage")
 	public String addStudent(Model model) {
 		
-		StudentDTO studentDTO = new StudentDTO();
+		Student student = new Student();
 		
-		model.addAttribute("studentDTO", studentDTO);
+		model.addAttribute("student", student);
 		
 		
 		return "add-student";
@@ -45,9 +43,10 @@ public class StudentController {
 	
 	@ResponseBody
 	@GetMapping("/save-student")
-	public String saveStudent(StudentDTO studentDTO) {
-//		model.getAttribute("studentDTO");
-		System.out.println("saveStudent : studentDTO = "+studentDTO);
+	public String saveStudent(Student student) {
+		System.out.println("saveStudent : student = "+student);
+		
+		StudentDAO.saveStudent(student);
 		
 		return "Student saved....";
 	}

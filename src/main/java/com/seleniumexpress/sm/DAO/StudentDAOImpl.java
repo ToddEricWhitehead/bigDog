@@ -26,4 +26,16 @@ public class StudentDAOImpl implements StudentDAO {
 		return students;
 	}
 
+	@Override
+	public void saveStudent(Student student) {
+		String sql = "INSERT INTO STUDENTS (NAME, MOBILE, COUNTRY) VALUES (?,?,?)";
+		
+		Object[] args =
+			{student.getName(), student.getMobile(), student.getCountry()};
+		
+		int numInsert = jdbcTemplate.update(sql, args);
+		
+		System.out.println("saveStudent(Student student) : num "+numInsert);
+	}
+
 }
