@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.seleniumexpress.sm.DAO.StudentDAO;
@@ -41,13 +42,13 @@ public class StudentController {
 		return "add-student";
 	}
 	
-	@ResponseBody
-	@GetMapping("/save-student")
+	@PostMapping("/save-student")
 	public String saveStudent(Student student) {
 		System.out.println("saveStudent : student = "+student);
 		
 		StudentDAO.saveStudent(student);
 		
-		return "Student saved....";
+		return "redirect:/showStudent";
 	}
+	
 }

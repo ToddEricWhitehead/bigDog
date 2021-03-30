@@ -9,7 +9,13 @@
 </head>
 <body>
 
- <div>
+
+ <div align="center">
+ 
+  <form action="/student-management-bigdog/showAddStudentPage">
+  	<input type="submit" value="ADD" />
+  </form>
+ 
   <table border="1">
     <thead>
      <tr>

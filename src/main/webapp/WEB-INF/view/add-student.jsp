@@ -14,7 +14,7 @@
 <h3>Add Student</h3>
 
   <!-- create spring form for data input -->
-  <form:form action="save-student" modelAttribute="student" method="GET">
+  <form:form action="save-student" modelAttribute="student" method="POST">
 
    <table>
     <label>Name :</label>
