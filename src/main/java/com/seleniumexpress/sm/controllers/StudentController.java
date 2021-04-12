@@ -11,17 +11,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.seleniumexpress.sm.DAO.StudentDAO;
 import com.seleniumexpress.sm.api.Student;
+import com.seleniumexpress.sm.service.StudentService;
 @Controller
 public class StudentController {
 
 	@Autowired
-	StudentDAO StudentDAO;
+	StudentService studentService;
 	
 //	@RequestMapping(value="/showStudent", method=RequestMethod.GET)
 	@GetMapping("/showStudent")
 	public String showStudentList(Model model) {
 		
-		List<Student> students = StudentDAO.loadStudents();
+		List<Student> students = studentService.loadStudents();
 		model.addAttribute("students", students);
 		
 		for(Student student: students) {
@@ -46,7 +47,7 @@ public class StudentController {
 	public String saveStudent(Student student) {
 		System.out.println("saveStudent : student = "+student);
 		
-		StudentDAO.saveStudent(student);
+		studentService.saveStudent(student);
 		
 		return "redirect:/showStudent";
 	}
