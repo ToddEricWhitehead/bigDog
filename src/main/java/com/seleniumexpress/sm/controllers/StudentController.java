@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.seleniumexpress.sm.DAO.StudentDAO;
@@ -52,4 +54,34 @@ public class StudentController {
 		return "redirect:/showStudent";
 	}
 	
+	@GetMapping("/updateStudent")
+	public String updateStudent(@RequestParam("userId") int id, Model model) {
+
+		// get Param
+		System.out.println("look up student with id :"+id);
+		
+		Student theStudent = studentService.getStudent(id);
+		System.out.println(theStudent);		
+		
+		model.addAttribute("student", theStudent);		
+		
+		return "add-student";
+	}
+	
+//	@GetMapping("/updateStudent")
+//	public String updateStudent(@RequestParam("userId") int id, @ModelAttribute("student") Student student) {
+//
+//		// get Param
+//		System.out.println("look up student with id :"+id);
+//		
+//		Student theStudent = studentService.getStudent(id);
+//		System.out.println(theStudent);
+//		
+//		student.setId(theStudent.getId());
+//		student.setName(theStudent.getName());
+//		student.setMobile(theStudent.getMobile());
+//		student.setCountry(theStudent.getCountry());
+//		
+//		return "add-student";
+//	}
 }

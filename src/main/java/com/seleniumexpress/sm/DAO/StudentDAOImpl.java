@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -36,6 +37,22 @@ public class StudentDAOImpl implements StudentDAO {
 		int numInsert = jdbcTemplate.update(sql, args);
 		
 		System.out.println("saveStudent(Student student) : num "+numInsert);
+	}
+
+	@Override
+	public Student findById(int id) {
+		String sql = "Select * from students where id = ?";
+		
+		Student student = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Student>(Student.class), id);
+		return student;
+	}
+
+	@Override
+	public Student getStudent(int id) {
+
+		String sql = "Select * from students where id = ?";		
+		Student student = jdbcTemplate.queryForObject(sql, new StudentRowMapper(), id);
+		return student;
 	}
 
 }

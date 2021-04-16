@@ -4,6 +4,7 @@ https://github.com/ToddEricWhitehead/bigDog.git
 Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.
 
 …or create a new repository on the command line
+https://github.com/ToddEricWhitehead <- need to create repository 'bigDog' here first - no README no .gitignore
 echo "# bigDog" >> README.md
 git init
 git add README.md
@@ -16,4 +17,14 @@ git push -u origin main
 git remote add origin https://github.com/ToddEricWhitehead/bigDog.git
 git branch -M main
 git push -u origin main
+
+
+.gitignore
+-----
+.classpath
+.classpath
+.project
+.settings/
+target/
+
 

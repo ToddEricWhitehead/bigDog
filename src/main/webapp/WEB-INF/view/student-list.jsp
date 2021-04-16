@@ -11,7 +11,7 @@
 
 
  <div align="center">
- 
+ <!--  modelAttribute="student"   -->
   <form action="/student-management-bigdog/showAddStudentPage">
   	<input type="submit" value="ADD" />
   </form>
@@ -23,6 +23,7 @@
       <th>Name</th>
       <th>Mobile</th>
       <th>Country</th>
+      </th>
      </tr> 
     </thead>
 	<c:forEach var="student" items="${students}">
@@ -31,6 +32,7 @@
 		<td>${student.name}</td>
 		<td>${student.mobile}</td>
 		<td>${student.country}</td>
+		<td><a href="/student-management-bigdog/updateStudent?userId=${student.id}">Update</a></td>
 	  </tr>		
 	</c:forEach>
   </table>
