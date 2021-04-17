@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.mysql.cj.jdbc.Driver;
@@ -47,4 +48,10 @@ public class StudentAppConfig {
 		
 		return dataSource;		
 	}
+	
+	@Bean
+	public SimpleMappingExceptionResolver simpleMappingExceptionResolver() {
+		return new SimpleMappingExceptionResolver();
+	}
+	
 }
