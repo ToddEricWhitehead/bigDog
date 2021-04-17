@@ -1,6 +1,5 @@
 package com.seleniumexpress.sm.DAO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +52,16 @@ public class StudentDAOImpl implements StudentDAO {
 		String sql = "Select * from students where id = ?";		
 		Student student = jdbcTemplate.queryForObject(sql, new StudentRowMapper(), id);
 		return student;
+	}
+
+	@Override
+	public int updateStudent(Student student) {
+		String sql = "Update Students set "
+				+"NAME = ?, MOBILE = ?, COUNTRY = ? "
+				+"WHERE ID = ?";
+		Object args[] = {student.getName(), student.getMobile(), student.getCountry(), student.getId()};
+		int numUpdated = jdbcTemplate.update(sql, args);
+		return numUpdated;
 	}
 
 }

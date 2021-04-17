@@ -10,5 +10,6 @@ public interface StudentDAO {
 	void saveStudent(Student student);
 	Student findById(int id);
 	Student getStudent(int id);
+	int updateStudent(Student student);
 	
 }

@@ -27,9 +27,9 @@ public class StudentController {
 		List<Student> students = studentService.loadStudents();
 		model.addAttribute("students", students);
 		
-		for(Student student: students) {
-			System.out.println(student);		
-		}
+//		for(Student student: students) {
+//			System.out.println(student);		
+//		}
 		
 		return "student-list";
 	}
@@ -65,7 +65,16 @@ public class StudentController {
 		
 		model.addAttribute("student", theStudent);		
 		
-		return "add-student";
+		return "update-student";
+	}
+	
+	@PostMapping("/doUpdateStudent")
+	public String doUpdateStudent(Student student) {
+		System.out.println("/doUpdateStudent student = "+student);
+		
+		int numUpdated = studentService.updateStudent(student);
+		
+		return "redirect:/showStudent";
 	}
 	
 //	@GetMapping("/updateStudent")
