@@ -59,6 +59,8 @@ public class StudentDAOImpl implements StudentDAO {
 		String sql = "Update Students set "
 				+"NAME = ?, MOBILE = ?, COUNTRY = ? "
 				+"WHERE ID = ?";
+		// test SimpleMappingExceptionResolver -> properties.put("java.lang.RuntimeException", "runtimeException"); -- resolver.setExceptionMappings(properties);
+//		sql += "kljsdfjas";
 		Object args[] = {student.getName(), student.getMobile(), student.getCountry(), student.getId()};
 		int numUpdated = jdbcTemplate.update(sql, args);
 		return numUpdated;

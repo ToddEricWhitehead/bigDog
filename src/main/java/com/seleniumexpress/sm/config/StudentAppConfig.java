@@ -1,5 +1,7 @@
 package com.seleniumexpress.sm.config;
 
+import java.util.Properties;
+
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
@@ -50,7 +52,12 @@ public class StudentAppConfig {
 	}
     @Bean
        public SimpleMappingExceptionResolver simpleMappingExceptionResolver() {
-               return new SimpleMappingExceptionResolver();
+    	SimpleMappingExceptionResolver resolver = new SimpleMappingExceptionResolver();
+    	Properties properties = new Properties();
+    	properties.put("java.lang.RuntimeException", "runtimeException");
+    	resolver.setExceptionMappings(properties);
+    	resolver.setDefaultErrorView("genericView");
+		return resolver;
        }
 
 }

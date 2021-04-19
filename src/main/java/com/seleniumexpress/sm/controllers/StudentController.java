@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 import com.seleniumexpress.sm.DAO.StudentDAO;
 import com.seleniumexpress.sm.api.Student;
@@ -69,8 +70,13 @@ public class StudentController {
 	}
 	
 	@PostMapping("/doUpdateStudent")
-	public String doUpdateStudent(Student student) {
+	public String doUpdateStudent(Student student) throws Exception {
 		System.out.println("/doUpdateStudent student = "+student);
+
+		// test SimpleMappingExceptionResolver -> resolver.setDefaultErrorView("genericView");
+//		if (student.getName().isEmpty()) {
+//			throw new Exception("student.getName().isEmpty()");
+//		}
 		
 		int numUpdated = studentService.updateStudent(student);
 		
