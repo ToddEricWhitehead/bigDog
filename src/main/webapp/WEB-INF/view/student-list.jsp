@@ -33,6 +33,7 @@
 		<td>${student.mobile}</td>
 		<td>${student.country}</td>
 		<td><a href="/student-management-bigdog/updateStudent?userId=${student.id}">Update</a></td>
+		<td><a href="/student-management-bigdog/deleteStudent?userId=${student.id}" onclick="if(!(confirm('Really Delete?'))) return false">Delete</a></td>
 	  </tr>		
 	</c:forEach>
   </table>

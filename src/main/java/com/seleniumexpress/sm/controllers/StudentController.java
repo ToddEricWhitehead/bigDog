@@ -83,6 +83,24 @@ public class StudentController {
 		return "redirect:/showStudent";
 	}
 	
+	@GetMapping("/deleteStudent")
+	public String deleteStudent(@RequestParam("userId") int id, Model model) {
+		System.out.println("/deleteStudent id: "+id);
+		
+		Student student = studentService.getStudent(id);
+		System.out.println("/deleteStudent student: "+student);
+		
+		model.addAttribute("student", student);
+		
+		return "delete-student";
+	}
+	
+	@PostMapping("/doDeleteStudent")
+	public String doDeleteStudent(Student student) {
+		int numberDeleted = studentService.deleteStudent(student.getId());
+		return "redirect:/showStudent";
+	}
+	
 //	@GetMapping("/updateStudent")
 //	public String updateStudent(@RequestParam("userId") int id, @ModelAttribute("student") Student student) {
 //

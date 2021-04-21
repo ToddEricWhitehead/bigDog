@@ -49,4 +49,10 @@ public class StudentServiceImpl implements StudentService {
 		return numberUpdated;
 	}
 
+	@Override
+	public int deleteStudent(int id) {
+		int numberDeleted = studentDAO.deleteStudent(id);
+		return numberDeleted;
+	}
+
 }
