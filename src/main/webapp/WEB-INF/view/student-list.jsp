@@ -6,15 +6,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Student List</title>
+
+<link rel="stylesheet" type="text/css" href="/student-management-bigdog/URLToReachResourcesFolder/css/my-style-sheet.css"/>
+
 </head>
 <body>
 
+ <h1 align="center">Students </h1>
 
  <div align="center">
  <!--  modelAttribute="student"   -->
   <form action="/student-management-bigdog/showAddStudentPage">
   	<input type="submit" value="ADD" />
   </form>
+  <br/>
  
   <table border="1">
     <thead>
@@ -37,6 +42,10 @@
 	  </tr>		
 	</c:forEach>
   </table>
+  
+  <img alt="fake students photo" src="/student-management-bigdog/URLToReachResourcesFolder/images/girl.jpg" />   
+  <img alt="fake students photo" src="/student-management-bigdog/URLToReachResourcesFolder/images/girl_dog.jpg" />
+  
  </div>
 </body>
 </html>
