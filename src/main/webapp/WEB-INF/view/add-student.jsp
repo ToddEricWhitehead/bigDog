@@ -1,17 +1,19 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Add Student</title>
+  <meta charset="UTF-8">
+  <title>Add Student</title>
+  <link rel="stylesheet" type="text/css" href="/student-management-bigdog/URLToReachResourcesFolder/css/add-student.css">
+  <link rel="stylesheet" type="text/css" href="/student-management-bigdog/URLToReachResourcesFolder/css/my-style-sheet.css">
 </head>
-<body>
+<body class="myFonts">
 
 <div align="center" >
-<h3>Add Student</h3>
+<h1>Add Student</h1>
 
   <!-- create spring form for data input -->
   <form:form action="save-student" modelAttribute="student" method="POST">

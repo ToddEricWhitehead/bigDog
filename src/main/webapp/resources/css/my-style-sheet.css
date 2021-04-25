@@ -3,3 +3,19 @@
 h1 {
 	color:red;
 }
+
+.myFonts {
+	font-size: 40px;
+	font-family: Monaco;
+}
+
+.myButton {
+	color: white;
+	background: blue;
+	padding: 20px;
+	transition-duration: 0.5s;
+}
+.myButton:hover {
+	color: white;
+	background: red;
+}

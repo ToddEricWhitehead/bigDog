@@ -7,11 +7,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Student</title>
+  <link rel="stylesheet" type="text/css" href="/student-management-bigdog/URLToReachResourcesFolder/css/my-style-sheet.css">
 </head>
 <body>
 
 <div align="center" >
-<h3>Update Student</h3>
+<h1>Update Student</h1>
 
   <!-- create spring form for data input -->
   <form:form action="doUpdateStudent" modelAttribute="student" method="POST">

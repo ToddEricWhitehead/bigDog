@@ -7,10 +7,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Delete Student</title>
+  <link rel="stylesheet" type="text/css" href="/student-management-bigdog/URLToReachResourcesFolder/css/my-style-sheet.css">
 </head>
 <body>
   <div align="center">
-	<h3>Delete Student</h3>
+	<h1>Delete Student</h1>
 	
 	<form:form action="doDeleteStudent" modelAttribute="student" method="POST">
 		<table>

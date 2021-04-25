@@ -1,23 +1,23 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Student List</title>
 
-<link rel="stylesheet" type="text/css" href="/student-management-bigdog/URLToReachResourcesFolder/css/my-style-sheet.css"/>
+<link rel="stylesheet" type="text/css" href="/student-management-bigdog/URLToReachResourcesFolder/css/my-style-sheet.css">
 
 </head>
-<body>
+<body class="myFonts">
 
  <h1 align="center">Students </h1>
 
  <div align="center">
  <!--  modelAttribute="student"   -->
-  <form action="/student-management-bigdog/showAddStudentPage">
-  	<input type="submit" value="ADD" />
+  <form action="showAddStudentPage">
+  	<input type="submit" value="ADD" class="myButton"/>
   </form>
   <br/>
  
@@ -43,7 +43,7 @@
 	</c:forEach>
   </table>
   
-  <img alt="fake students photo" src="/student-management-bigdog/URLToReachResourcesFolder/images/girl.jpg" />   
+  <!--  <img alt="fake students photo" src="/student-management-bigdog/URLToReachResourcesFolder/images/girl.jpg" />  -->   
   <img alt="fake students photo" src="/student-management-bigdog/URLToReachResourcesFolder/images/girl_dog.jpg" />
   
  </div>
