@@ -27,4 +27,15 @@ git push -u origin main
 .settings/
 target/
 
+branch - embedded-mykong [embeddedDB-mkyong 718da8d] 
+---
+Credit:
+ - Spring embedded database examples - By mkyong 
+ - https://mkyong.com/spring/spring-embedded-database-examples/
+
+Goal: 
+ - 1) Get tests with live mySql database to work - using bean.xml in Test 
+ - 2) Get Embedded Database to work using hsqldb - both call the same Test 
+ - Next separate into two tests & Make a test for each of the Embedded DB types db-derby, h2 
+   -- also Auto increment in hsqldb did not work - find out why.
 
