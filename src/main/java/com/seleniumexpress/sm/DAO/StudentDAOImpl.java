@@ -16,6 +16,10 @@ public class StudentDAOImpl implements StudentDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+
 	@Override
 	public List<Student> loadStudents() {
 		
