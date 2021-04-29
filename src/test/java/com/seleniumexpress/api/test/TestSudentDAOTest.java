@@ -22,7 +22,6 @@ import com.seleniumexpress.sm.service.StudentService;
 
 @ContextConfiguration(locations = {"classpath:beansEmbedded.xml"})
 //@ContextConfiguration(locations = {"classpath:beans.xml"})
-//@ContextConfiguration(locations = {"StudentAppConfig.class"})
 //@ComponentScan(basePackages={"com.seleniumexpress"})
 public class TestSudentDAOTest {
 
@@ -46,6 +45,20 @@ public class TestSudentDAOTest {
 	
 	@Test
 	public void getStudentsWithService() {
+		List<Student> students = studentService.loadStudents();
+		assertNotNull(students);
+		System.out.println("studentService.loadStudents : "+students);
+	}
+	
+	@Test
+	public void insertStudent() {
+		Student student = new Student();
+		student.setName("Christ has a vision for me");
+		student.setMobile(29109021L);
+		student.setCountry("Chili");
+		
+		studentService.saveStudent(student);		
+
 		List<Student> students = studentService.loadStudents();
 		assertNotNull(students);
 		System.out.println("studentService.loadStudents : "+students);

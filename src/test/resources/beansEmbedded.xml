@@ -30,7 +30,10 @@
     	<constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
  
-	<import resource="db-hsqldb-config.xml"/>
+	<!-- <import resource="db-derby-config.xml"/> -->
+ 	<import resource="db-h2-config.xml"/>
+	<!-- <import resource="db-hsqldb-config.xml"/> -->
+		
 	<import resource="spring-bean-config.xml"/>  
 
 	<bean id="studentDAO" class="com.seleniumexpress.sm.DAO.StudentDAOImpl">

@@ -29,13 +29,26 @@ target/
 
 branch - embedded-mykong [embeddedDB-mkyong 718da8d] 
 ---
-Credit:
- - Spring embedded database examples - By mkyong 
- - https://mkyong.com/spring/spring-embedded-database-examples/
+Credit: - Spring embedded database examples - By mkyong  - https://mkyong.com/spring/spring-embedded-database-examples/
 
 Goal: 
  - 1) Get tests with live mySql database to work - using bean.xml in Test 
  - 2) Get Embedded Database to work using hsqldb - both call the same Test 
  - Next separate into two tests & Make a test for each of the Embedded DB types db-derby, h2 
    -- also Auto increment in hsqldb did not work - find out why.
+   
+Tested all Embedded Databases
+-----
+derby
+h2
+hsqldb
+
+Issues:
+-----
+ - Create Table "AUTO INCREMENT" fails
+   - Fix -> Changed Create Table "AUTO INCREMENT" to "AUTO_INCREMENT"
+ - BIGINT(10) fails, but BIGINT works, so good enough.
+ - credit - Chapter 13. Compatibility With Other DBMS -- http://hsqldb.org/doc/2.0/guide/compatibility-chapt.html
+ 
+   Tested all Embedded Databases, Fixed Create Table AUTO_INCREMENT, removed application-context.xml from web.xml, add *.sql file for mySql
 
